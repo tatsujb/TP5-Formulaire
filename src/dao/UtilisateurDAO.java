@@ -1,27 +1,31 @@
 package dao;
 
 import Bean.Utilisateur;
-import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.Statement;
+import java.sql.PreparedStatement;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  * Created by  Stefan Matei <https://github.com/hormatei> on 22/05/17.
  */
-public class UtilisateurDAO {
+public class UtilisateurDAO extends DAO<Utilisateur> {
 
     private final String TABLE = "";
 
-    public Utilisateur find(Long id) {
+
+    @Override
+
+    public Utilisateur find(int id) {
         Utilisateur utilisateur = null;
         try {
             String req = "SELECT * FROM " + TABLE + " WHERE id = ?";
             //System.out.println("requête : " + req); // DEBUG
             PreparedStatement pstmt = this.connection.prepareStatement(req);
-            pstmt.setInteger(1, id);
+            pstmt.setInt(1, id);
 
 
             ResultSet result = pstmt.executeQuery();
@@ -35,6 +39,7 @@ public class UtilisateurDAO {
         }
         return utilisateur;
     }
+    @Override
 
     public Utilisateur create(Utilisateur obj) {
         try {
@@ -51,7 +56,7 @@ public class UtilisateurDAO {
 
 // Ca permet de savoir ce qu'on a réellement mis dans la DB
             ResultSet rs = pstmt.getGeneratedKeys();
-            long last_inserted_id;
+            int last_inserted_id;
             if (rs.first()) { // Si on a des id créés
                 last_inserted_id = rs.getInt(1);
 // On récupère l'enregistrement créé
@@ -63,6 +68,7 @@ public class UtilisateurDAO {
         return obj;
 
     }
+    @Override
 
     public Utilisateur update(Utilisateur obj) {
         try {
@@ -82,6 +88,7 @@ public class UtilisateurDAO {
         }
         return obj;
     }
+    @Override
 
     public void delete(Utilisateur obj) {
         try {

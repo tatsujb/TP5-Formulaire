@@ -5,7 +5,7 @@ package Bean;
  */
 public class Utilisateur {
 
-    private Integer id;
+    private int id;
     private String email;
     private String password;
     private String nom ;
@@ -15,18 +15,18 @@ public class Utilisateur {
     public Utilisateur() {
     }
 
-    public Utilisateur(Integer id, String email, String password, String nom) {
+    public Utilisateur(int id, String email, String password, String nom) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.nom = nom;
     }
     //Getters & Setters
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
