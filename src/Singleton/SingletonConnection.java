@@ -33,6 +33,7 @@ public class SingletonConnection {
                     e.printStackTrace();
                 }
             }
+        return connection;
         }
     }
 
