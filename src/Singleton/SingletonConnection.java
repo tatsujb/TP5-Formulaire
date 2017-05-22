@@ -21,15 +21,17 @@ public class SingletonConnection {
         //Objet Connection
         private static Connection connection;
         //
-        static {
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-                connection = DriverManager.getConnection(URL,USER,PASSWORD);
-                if (connection.equals(true)) {
-                    System.out.println("connection etablie");
+        public static Connection getInstance() {
+            if (connection == null) {
+                try {
+                    Class.forName("com.mysql.jdbc.Driver");
+                    connection = DriverManager.getConnection(URL, USER, PASSWORD);
+                    if (connection.equals(true)) {
+                        System.out.println("connection etablie");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
         }
     }
