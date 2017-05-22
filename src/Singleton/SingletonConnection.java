@@ -15,9 +15,9 @@ public class SingletonConnection {
         private static final String DATABASE = "JEETP5";
         private static final String URL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE;
         //nom du user
-        private static final String USER = "root";
+        private static final String USER = "ldnr";
         //mot de passe du user
-        private static final String PASSWORD = "1234512345";
+        private static final String PASSWORD = "ldnr";
         //Objet Connection
         private static Connection connection;
         //
