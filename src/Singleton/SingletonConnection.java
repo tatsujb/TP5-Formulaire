@@ -12,12 +12,12 @@ public class SingletonConnection {
         //url de connexion
         private static final String HOST = "localhost";
         private static final String PORT = "3306";
-        private static final String DATABASE = "";
+        private static final String DATABASE = "JEETP5";
         private static final String URL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE;
         //nom du user
-        private static final String USER = "";
+        private static final String USER = "root";
         //mot de passe du user
-        private static final String PASSWORD = "";
+        private static final String PASSWORD = "1234512345";
         //Objet Connection
         private static Connection connection;
         //
